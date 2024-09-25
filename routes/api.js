@@ -22,7 +22,6 @@ const isUrl = (url, regex) => {
 const message = {
   null_url: { status: false, message: "Input parameter 'url' is missing." },
   null_msg: { status: false, message: "Input parameter 'msg' is missing." },
-  null_query: { status: false, message: "Input parameter 'query' is missing." },
   is_url: { status: false, message: 'Invalid URL provided!' }
 };
 
@@ -158,9 +157,9 @@ router.get('/soundcloud', async (req, res) => {
 
 router.get('/chatgpt', async (req, res) => {
   try {
-    const query = req.query.query;
-    if (!query) return res.json(errorResponse(message.null_query.message));
-    const result = await chatgpt(query);
+    const msg = req.query.msg;
+    if (!msg) return res.json(errorResponse(message.null_msg.message));
+    const result = await chatgpt(msg);
     res.status(200).json(successResponse(result));
   } catch (err) {
     res.status(500).json(errorResponse(err.message));
@@ -169,9 +168,9 @@ router.get('/chatgpt', async (req, res) => {
 
 router.get('/gemini', async (req, res) => {
   try {
-    const query = req.query.query;
-    if (!query) return res.json(errorResponse(message.null_query.message));
-    const result = await gemini(query);
+    const msg = req.query.msg;
+    if (!msg) return res.json(errorResponse(message.null_msg.message));
+    const result = await gemini(msg);
     res.status(200).json(successResponse(result));
   } catch (err) {
     res.status(500).json(errorResponse(err.message));
@@ -180,9 +179,9 @@ router.get('/gemini', async (req, res) => {
 
 router.get('/text2image', async (req, res) => {
   try {
-    const query = req.query.query;
-    if (!query) return res.json(errorResponse(message.null_query.message));
-    const result = await text2image(query);
+    const msg = req.query.msg;
+    if (!msg) return res.json(errorResponse(message.null_msg.message));
+    const result = await text2image(msg);
     res.status(200).json(successResponse(result));
   } catch (err) {
     res.status(500).json(errorResponse(err.message));
@@ -191,8 +190,8 @@ router.get('/text2image', async (req, res) => {
 
 router.get('/youtubeplay', async (req, res) => {
   try {
-    const query = req.query.query;
-    if (!query) return res.json(errorResponse(message.null_query.message));
+    const msg = req.query.query;
+    if (!msg) return res.json(errorResponse(message.null_msg.message));
     const result = await youtubeplay(query);
     res.status(200).json(successResponse(result));
   } catch (err) {
