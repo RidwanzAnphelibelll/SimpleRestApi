@@ -12,6 +12,7 @@
 | 8.  | `api/snackvideo`    | `url`            | GET    | [=>](https://simple-rest-api-rs.vercel.app/api/snackvideo?url=https://www.snackvideo.com/@DGFootball/video/5195052276352746937) |
 | 9.  | `api/pinterest`    | `url`            | GET    | [=>](https://simple-rest-api-rs.vercel.app/api/pinterest?url=https://pin.it/7MW9Nxqho) |
 | 10.  | `api/spotify`    | `url`            | GET    | [=>](https://simple-rest-api-rs.vercel.app/api/spotify?url=https://open.spotify.com/track/1Ng9fMWIR9BvnWPCOVHzfB?si=j8lZksoFRjaeWzb84lt3iw) |
+| 10.  | `api/spotifyv2`    | `url`            | GET    | [=>](https://simple-rest-api-rs.vercel.app/api/spotifyv2?url=https://open.spotify.com/track/156IehL7h45TLO3OvVHPVw?si=44VQ5ojvS1G71EwnKN-Cdw) |
 | 11.  | `api/soundcloud`    | `url`            | GET    | [=>](https://simple-rest-api-rs.vercel.app/api/soundcloud?url=https://m.soundcloud.com/saputra-effendi-802578673/lewat-angin-wengi) |
 | 12.  | `api/chatgpt`    | `msg`            | GET    | [=>](https://simple-rest-api-rs.vercel.app/api/chatgpt?msg=who%20are%20you) |
 | 13.  | `api/gemini`    | `msg`            | GET    | [=>](https://simple-rest-api-rs.vercel.app/api/gemini?msg=who%20are%20you) |
