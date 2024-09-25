@@ -123,7 +123,7 @@ router.get('/snackvideo', async (req, res) => {
   try {
     const url = req.query.url;
     if (!url) return res.json(errorResponse(message.null_url.message));
-    if (!isUrl(url, /^https:\/\/(.*pinterest\.com|pin\.it)\/.+/)) return res.json(errorResponse(message.is_url.message));
+    if (!isUrl(url, /^https:\/\/.*snackvideo\.com\/.+/)) return res.json(errorResponse(message.is_url.message));
     const result = await snackvideo(url);
     res.status(200).json(successResponse(result));
   } catch (err) {
