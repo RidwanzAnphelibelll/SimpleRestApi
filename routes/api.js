@@ -7,6 +7,7 @@ const { tiktok, facebook, instagram, twitter, youtube, threads, capcut, pinteres
 const { chatgpt } = require('../lib/chatgpt');
 const { gemini } = require('../lib/gemini');
 const { text2image } = require('../lib/text2image');
+const { snackvideo } = require('../lib/snackvideo');
 
 const isUrl = (url, regex) => {
   try {
@@ -112,6 +113,18 @@ router.get('/capcut', async (req, res) => {
     if (!url) return res.json(errorResponse(message.null_url.message));
     if (!isUrl(url, /^https:\/\/.*capcut\.com\/.+/)) return res.json(errorResponse(message.is_url.message));
     const result = await capcut(url);
+    res.status(200).json(successResponse(result));
+  } catch (err) {
+    res.status(500).json(errorResponse(err.message));
+  }
+});
+
+router.get('/snackvideo', async (req, res) => {
+  try {
+    const url = req.query.url;
+    if (!url) return res.json(errorResponse(message.null_url.message));
+    if (!isUrl(url, /^https:\/\/(.*pinterest\.com|pin\.it)\/.+/)) return res.json(errorResponse(message.is_url.message));
+    const result = await snackvideo(url);
     res.status(200).json(successResponse(result));
   } catch (err) {
     res.status(500).json(errorResponse(err.message));
