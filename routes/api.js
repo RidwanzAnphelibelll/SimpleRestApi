@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const util = require('util');
-const { tiktok, facebook, instagram, twitter, youtube, threads, capcut, snackvideo, pinterest, spotify, spotifyv2, soundcloud } = require('../lib/scraper');
+const { tiktok, facebook, instagram, twitter, youtube, threads, capcut, snackvideo, pinterest, spotify, soundcloud } = require('../lib/scraper');
 const { chatgpt } = require('../lib/chatgpt');
 const { gemini } = require('../lib/gemini');
 const { text2image } = require('../lib/text2image');
@@ -148,18 +148,6 @@ router.get('/spotify', async (req, res) => {
     if (!url) return res.json(errorResponse(message.null_url.message));
     if (!isUrl(url, /^https:\/\/open\.spotify\.com\/track\/.+/)) return res.json(errorResponse(message.is_url.message));
     const result = await spotify(url);
-    res.status(200).json(successResponse(result));
-  } catch (err) {
-    res.status(500).json(errorResponse(err.message));
-  }
-});
-
-router.get('/spotifyv2', async (req, res) => {
-  try {
-    const url = req.query.url;
-    if (!url) return res.json(errorResponse(message.null_url.message));
-    if (!isUrl(url, /^https:\/\/open\.spotify\.com\/track\/.+/)) return res.json(errorResponse(message.is_url.message));
-    const result = await spotifyv2(url);
     res.status(200).json(successResponse(result));
   } catch (err) {
     res.status(500).json(errorResponse(err.message));
