@@ -7,7 +7,6 @@ const { tiktok, facebook, instagram, twitter, youtube, threads, capcut, pinteres
 const { chatgpt } = require('../lib/chatgpt');
 const { gemini } = require('../lib/gemini');
 const { text2image } = require('../lib/text2image');
-const { youtubeplay } = require('../lib/youtubeplay');
 
 const isUrl = (url, regex) => {
   try {
@@ -182,17 +181,6 @@ router.get('/text2image', async (req, res) => {
     const msg = req.query.msg;
     if (!msg) return res.json(errorResponse(message.null_msg.message));
     const result = await text2image(msg);
-    res.status(200).json(successResponse(result));
-  } catch (err) {
-    res.status(500).json(errorResponse(err.message));
-  }
-});
-
-router.get('/youtubeplay', async (req, res) => {
-  try {
-    const msg = req.query.msg;
-    if (!msg) return res.json(errorResponse(message.null_msg.message));
-    const result = await youtubeplay(msg);
     res.status(200).json(successResponse(result));
   } catch (err) {
     res.status(500).json(errorResponse(err.message));
