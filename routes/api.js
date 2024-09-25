@@ -3,11 +3,10 @@
 const express = require('express');
 const router = express.Router();
 const util = require('util');
-const { tiktok, facebook, instagram, twitter, youtube, threads, capcut, pinterest, spotify, soundcloud } = require('../lib/scraper');
+const { tiktok, facebook, instagram, twitter, youtube, threads, capcut, snackvideo, pinterest, spotify, soundcloud } = require('../lib/scraper');
 const { chatgpt } = require('../lib/chatgpt');
 const { gemini } = require('../lib/gemini');
 const { text2image } = require('../lib/text2image');
-const { snackvideo } = require('../lib/snackvideo');
 
 const isUrl = (url, regex) => {
   try {
