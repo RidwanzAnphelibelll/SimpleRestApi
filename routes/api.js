@@ -190,7 +190,7 @@ router.get('/text2image', async (req, res) => {
 
 router.get('/youtubeplay', async (req, res) => {
   try {
-    const msg = req.query.query;
+    const msg = req.query.msg;
     if (!msg) return res.json(errorResponse(message.null_msg.message));
     const result = await youtubeplay(msg);
     res.status(200).json(successResponse(result));
