@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.redirect('https://github.com/RidwanzAnphelibelll/SimpleRestApi#readme');
+    res.redirect('https://simple-rest-api-rs.vercel.app');
 });
 
 module.exports = router;
