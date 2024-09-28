@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 const cors = require('cors');
+const path = require('path');
 const chalk = require('chalk');
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const apirouter = require('./routes/api.js');
-const mainrouter = require('./routes/main.js');
 
 const app = express();
 
@@ -22,7 +22,11 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static('lib'));
-app.use('/', mainrouter);
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'lib', 'index.html'));
+});
+
 app.use('/api', apirouter);
 
 app.listen(PORT, () => {
