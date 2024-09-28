@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 app.use(express.static('lib'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'routes', 'docs.html'));
 });
 
 app.use('/api', apirouter);
