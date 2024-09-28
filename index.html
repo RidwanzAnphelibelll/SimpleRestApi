@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple REST API Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        #clock {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+        }
+        table:hover {
+            transform: scale(1.02);
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            text-transform: uppercase;
+        }
+        td a {
+            text-decoration: none;
+            color: #28a745;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        td a:hover {
+            color: #218838;
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            margin-top: 50px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            #clock {
+                font-size: 1em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            th, td {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Simple REST API Documentation</h1>
+    <div id="clock"></div>
+</header>
+
+<div class="container">
+    <h2>Available Endpoints</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Endpoint</th>
+                <th>Method</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><code>/api/tiktok</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/tiktok?url=https://vm.tiktok.com/ZS2atUtMp" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><code>/api/facebook</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/facebook?url=https://www.facebook.com/reel/2247364378937868/?mibextid=rS40aB7S9Ucbxw6v" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><code>/api/instagram</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/instagram?url=https://www.instagram.com/reel/C-sCl6Kp4Q0/?igsh=YzljYTk1ODg3Zg==" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><code>/api/twitter</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/twitter?url=https://x.com/jakeshieldsajj/status/1825665474287513629" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><code>/api/youtube</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/youtube?url=https://youtu.be/TicGJQqrq2M?si=19T6emrwmT5N_Nw8" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><code>/api/threads</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/threads?url=https://www.threads.net/@bagikertas/post/C_nwceJpfsd?xmt=AQGz4lrsqVUqdfXHgmq-hSJ4EBw8RJaZvUWK1uofwQzGMg" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><code>/api/capcut</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/capcut?url=https://www.capcut.com/template-detail/7073057900096195841?template_id=7073057900096195841&language=in&region=ID" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><code>/api/snackvideo</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/snackvideo?url=https://www.snackvideo.com/@DGFootball/video/5195052276352746937" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><code>/api/pinterest</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/pinterest?url=https://pin.it/7MW9Nxqho" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><code>/api/spotify</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/spotify?url=https://open.spotify.com/track/6XrTE0KupQWzcO6y2pkOQW?si=ZbYYDRa9T_2fu6xtaIgpJw" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td><code>/api/soundcloud</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/soundcloud?url=https://m.soundcloud.com/saputra-effendi-802578673/lewat-angin-wengi" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td><code>/api/chatgpt</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/chatgpt?msg=who%20are%20you" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td><code>/api/gemini</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/gemini?msg=who%20are%20you" target="_blank">[➠]</a></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td><code>/api/text2image</code></td>
+                <td>GET</td>
+                <td><a href="https://simple-rest-api-rs.vercel.app/api/text2image?msg=Describe%20the%20atmosphere%20of%20a%20beach%20at%20sunset,%20with%20an%20orange,%20red%20and%20purple%20sky.%20Add%20the%20silhouette%20of%20a%20coconut%20tree%20and%20waves%20glistening%20in%20the%20evening%20light." target="_blank">[➠]</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>&copy; 2024 Simple REST API. All rights reserved.</p>
+</footer>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        document.getElementById('clock').textContent = now.toLocaleTimeString([], options);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+</body>
+</html>
