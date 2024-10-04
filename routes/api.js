@@ -10,10 +10,8 @@ const { text2image } = require('../lib/text2image');
 
 const isUrl = (url, regex) => {
   try {
-    if (typeof url !== 'string') throw new Error('URL must be a string!');
-    return regex.test(url);
+    return typeof url === 'string' && regex.test(url);
   } catch (err) {
-    console.log(util.format(err));
     return false;
   }
 };
