@@ -5,7 +5,6 @@ const chalk = require('chalk');
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const apirouter = require('./routes/api.js');
-const mainrouter = require('./routes/main.js');
 
 const app = express();
 
@@ -22,7 +21,11 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static('lib'));
-app.use('/', mainrouter);
+
+app.get('/', (req, res) => {
+    res.redirect('https://github.com/RidwanzAnphelibelll/SimpleRestApi#readme');
+});
+
 app.use('/api', apirouter);
 
 app.listen(PORT, () => {
