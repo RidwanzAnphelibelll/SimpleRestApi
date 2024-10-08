@@ -1,4 +1,4 @@
-## Example and Params
+## Example and Params:
 
 | No. | Endpoint         | Parameter | Method | Example |
 |-----|------------------|-----------------|--------|---------|
@@ -15,4 +15,5 @@
 | 11.  | `api/soundcloud`    | `url`            | GET    | [=>](https://api-rs.us.kg/api/soundcloud?url=https://m.soundcloud.com/saputra-effendi-802578673/lewat-angin-wengi) |
 | 12.  | `api/chatgpt`    | `msg`            | GET    | [=>](https://api-rs.us.kg/api/chatgpt?msg=who%20are%20you) |
 | 13.  | `api/gemini`    | `msg`            | GET    | [=>](https://api-rs.us.kg/api/gemini?msg=who%20are%20you) |
+| 13.  | `api/ragbot`    | `msg`            | GET    | [=>](https://api-rs.us.kg/api/ragbot?msg=who%20are%20you) |
 | 14.  | `api/text2image` | `msg`            | GET    | [=>](https://api-rs.us.kg/api/text2image?msg=Describe%20the%20atmosphere%20of%20a%20beach%20at%20sunset,%20with%20an%20orange,%20red%20and%20purple%20sky.%20Add%20the%20silhouette%20of%20a%20coconut%20tree%20and%20waves%20glistening%20in%20the%20evening%20light.) |
