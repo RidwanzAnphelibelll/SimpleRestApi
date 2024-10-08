@@ -6,6 +6,7 @@ const util = require('util');
 const { tiktok, facebook, instagram, twitter, youtube, threads, capcut, snackvideo, pinterest, spotify, soundcloud } = require('../lib/scraper');
 const { chatgpt } = require('../lib/chatgpt');
 const { gemini } = require('../lib/gemini');
+const { ragbot } = require('../lib/ragbot');
 const { text2image } = require('../lib/text2image');
 
 const isUrl = (url, regex) => {
@@ -180,6 +181,17 @@ router.get('/gemini', async (req, res) => {
     const msg = req.query.msg;
     if (!msg) return res.json(errorResponse(message.null_msg.message));
     const result = await gemini(msg);
+    res.status(200).json(successResponse(result));
+  } catch (err) {
+    res.status(500).json(errorResponse(err.message));
+  }
+});
+
+router.get('/ragbot', async (req, res) => {
+  try {
+    const msg = req.query.msg;
+    if (!msg) return res.json(errorResponse(message.null_msg.message));
+    const result = await ragbot(msg);
     res.status(200).json(successResponse(result));
   } catch (err) {
     res.status(500).json(errorResponse(err.message));
