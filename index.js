@@ -11,6 +11,8 @@ const app = express();
 app.enable('trust proxy');
 app.set('json spaces', 2);
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use((req, res, next) => {
   if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
