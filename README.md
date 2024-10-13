@@ -17,5 +17,5 @@
 | 13.  | `api/gemini`    | `msg`            | GET    | [=>](https://api-rs.us.kg/api/gemini?msg=who%20are%20you) |
 | 14.  | `api/ragbot`    | `msg`            | GET    | [=>](https://api-rs.us.kg/api/ragbot?msg=who%20are%20you) |
 | 15.  | `api/text2image` | `msg`            | GET    | [=>](https://api-rs.us.kg/api/text2image?msg=Describe%20the%20atmosphere%20of%20a%20beach%20at%20sunset,%20with%20an%20orange,%20red%20and%20purple%20sky.%20Add%20the%20silhouette%20of%20a%20coconut%20tree%20and%20waves%20glistening%20in%20the%20evening%20light.) |
-| 16.  | `api/secret2fa`    | `secret`            | GET    | [=>](https://api-rs.us.kg/api/secret2fa?secret=AEYA25MC7LEXJCUJZD4T7O63ORGWJUZ4) |
-| 17.  | `api/checkhost`    | `host`            | GET    | [=>](https://api-rs.us.kg/api/checkhost?host=api-rs.us.kg) |
+| 16.  | `api/checkhost`    | `host`            | GET    | [=>](https://api-rs.us.kg/api/checkhost?host=api-rs.us.kg) |
+| 17.  | `api/secret2fa`    | `secret`            | GET    | [=>](https://api-rs.us.kg/api/secret2fa?secret=AEYA25MC7LEXJCUJZD4T7O63ORGWJUZ4) |
