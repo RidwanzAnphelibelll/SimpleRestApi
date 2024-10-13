@@ -22,8 +22,8 @@ const isUrl = (url, regex) => {
 const message = {
   null_url: { status: false, message: "Input parameter 'url' is missing." },
   null_msg: { status: false, message: "Input parameter 'msg' is missing." },
-  null_secret: { status: false, message: "Input parameter 'secret' is missing." },
   null_host: { status: false, message: "Input parameter 'host' is missing." },
+  null_secret: { status: false, message: "Input parameter 'secret' is missing." },
   is_url: { status: false, message: 'Invalid URL provided!' }
 };
 
