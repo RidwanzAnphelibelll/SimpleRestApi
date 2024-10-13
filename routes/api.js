@@ -8,8 +8,8 @@ const { chatgpt } = require('../lib/chatgpt');
 const { gemini } = require('../lib/gemini');
 const { ragbot } = require('../lib/ragbot');
 const { text2image } = require('../lib/text2image');
-const { secret2fa } = require('../lib/secret2fa');
 const { checkhost } = require('../lib/checkhost');
+const { secret2fa } = require('../lib/secret2fa');
 
 const isUrl = (url, regex) => {
   try {
@@ -213,23 +213,23 @@ router.get('/text2image', async (req, res) => {
   }
 });
 
-router.get('/secret2fa', async (req, res) => {
+router.get('/checkhost', async (req, res) => {
   try {
-    const secret = req.query.secret;
-    if (!secret) return res.json(errorResponse(message.null_secret.message));
-    const result = await secret2fa(secret);
-    if (typeof result === 'string') return res.json(errorResponse(result));
+    const host = req.query.host;
+    if (!host) return res.json(errorResponse(message.null_host.message));
+    const result = await checkhost(host);
     res.status(200).json(successResponse(result));
   } catch (err) {
     res.status(500).json(errorResponse(err.message));
   }
 });
 
-router.get('/checkhost', async (req, res) => {
+router.get('/secret2fa', async (req, res) => {
   try {
-    const host = req.query.host;
-    if (!host) return res.json(errorResponse(message.null_host.message));
-    const result = await checkhost(host);
+    const secret = req.query.secret;
+    if (!secret) return res.json(errorResponse(message.null_secret.message));
+    const result = await secret2fa(secret);
+    if (typeof result === 'string') return res.json(errorResponse(result));
     res.status(200).json(successResponse(result));
   } catch (err) {
     res.status(500).json(errorResponse(err.message));
